@@ -6,7 +6,7 @@ This app is a guide repo for app router in next.js 13
 - Server component (by default)
 - Loading, error handling (create loading.tsx) 
 - Rendering for optimized page speeds
-- SEO
+- SEO (sitemap.ts)
 - API route handler
 
 
