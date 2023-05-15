@@ -16,3 +16,4 @@ export default function Home() {
 // Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server".
 //   <form action={function} children=...>
 // check next.config.js
+// reference: https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions
