@@ -16,10 +16,12 @@ export default async function sitemap() {
     lastModified: new Date().toISOString(),
   }));
 
-  const routes = ["", "/about", "/posts"].map((route) => ({
+  const routes = ["", "about", "posts"].map((route) => ({
     url: `http://localhost:3000/${route}`,
     lastModified: new Date().toISOString(),
   }));
 
   return [...routes, ...posts];
 }
+
+// localhost:3000/sitemap.xml
