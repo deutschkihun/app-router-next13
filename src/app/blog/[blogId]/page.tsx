@@ -1,3 +1,5 @@
+// reference: https://nextjs.org/docs/app/api-reference/functions/generate-metadata
+
 import axios from "axios";
 
 const page = async ({}) => {
