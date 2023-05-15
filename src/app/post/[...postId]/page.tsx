@@ -12,7 +12,7 @@ interface PageProps {
 
 const page = async (props: PageProps) => {
   // data fetching
-  console.log(props.params.postId);
+  //console.log(props.params.postId);
 
   return (
     <div>
