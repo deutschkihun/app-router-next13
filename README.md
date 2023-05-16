@@ -118,4 +118,22 @@ export default page;
 ```
 ![build-4](https://github.com/deutschkihun/app-router-next13/assets/45092135/0c128a43-8e99-4824-a6d7-6a38c099e557)
 
+Also Next13 has option called `revalidate`. It supports ISR 
+
+```tsx
+// build-5
+import axios from "axios";
+
+export const revalidate = 10;
+
+const page = async ({}) => {
+  const { data } = await axios("https://jsonplaceholder.typicode.com/posts/1");
+
+  return <div>{JSON.stringify(data)}</div>;
+};
+
+export default page;
+```
+
+![build-5](https://github.com/deutschkihun/app-router-next13/assets/45092135/f22a24fd-aec9-44b7-bb32-7cec7d963318)
 
