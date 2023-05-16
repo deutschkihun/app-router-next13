@@ -59,7 +59,7 @@ export default page;
 
 ![build-1](https://github.com/deutschkihun/app-router-next13/assets/45092135/5f6b92b1-a8db-40db-a79b-c0dac1e4535e)
 
-As you can see here dashboard is generated in static (SSG), and it means buid-time generated
+As you can see here dashboard is generated in static, and it means buid-time generated
 
 
 ```tsx
@@ -136,4 +136,32 @@ export default page;
 ```
 
 ![build-5](https://github.com/deutschkihun/app-router-next13/assets/45092135/f22a24fd-aec9-44b7-bb32-7cec7d963318)
+
+As probably you know, Next13 routing works based on the file structure. Next has option for dynamic routing by using `slug`. 
+When you know the endpoint name, then you can create them with static site generation(SSG)
+
+```tsx
+// build-6
+export async function generateStaticParams() {
+  const blogs = ["blog-one", "blog-two"];
+
+  return blogs.map((blog) => {
+    return {
+      blogId: blog,
+    };
+  });
+}
+
+import type { FC } from "react";
+
+interface pageProps {}
+
+const page: FC<pageProps> = ({}) => {
+  return <div>hello</div>;
+};
+
+export default page;
+```
+
+![build-6](https://github.com/deutschkihun/app-router-next13/assets/45092135/8705efcc-05e0-4b56-a18c-eba5aaceb56d)
 
