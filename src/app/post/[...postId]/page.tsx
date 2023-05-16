@@ -1,3 +1,4 @@
+// reference: https://nextjs.org/docs/app/api-reference/functions/generate-metadata
 import { Metadata } from "next";
 
 type Post = {

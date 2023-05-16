@@ -1,13 +1,20 @@
-// reference: https://nextjs.org/docs/app/api-reference/functions/generate-metadata
+// build-6
+export async function generateStaticParams() {
+  const blogs = ["blog-one", "blog-two"];
 
-import axios from "axios";
+  return blogs.map((blog) => {
+    return {
+      blogId: blog,
+    };
+  });
+}
 
-const page = async ({}) => {
-  const { data } = await axios.get(
-    "https://jsonplaceholder.typicode.com/posts/1"
-  );
+import type { FC } from "react";
 
-  return <div>{JSON.stringify(data)}</div>;
+interface pageProps {}
+
+const page: FC<pageProps> = ({}) => {
+  return <div>hello</div>;
 };
 
 export default page;
