@@ -80,3 +80,42 @@ export default page;
 
 
 But here you can see that dashboard is generated dynamically. It's because of fetching with no-cache option. Dynamic generation means that page is created in runtime, not in build time
+
+NextJS 13 provides ISR (Incremental static regeneration and ISR is static
+
+```tsx
+// build-3
+const page = async ({}) => {
+  const res = await fetch("https://jsonplaceholder.typicode.com/posts/1", {
+    next: { revalidate: 1 },
+  });
+
+  const data = await res.json();
+  return <div>{JSON.stringify(data)}</div>;
+};
+
+export default page;
+```
+
+![build-3](https://github.com/deutschkihun/app-router-next13/assets/45092135/b8d18572-d633-4607-8108-12d607652613)
+
+But in production level. We don't use fetch api. Normally we use axios. But axios doesn't provide revalidate or cache option. But Next13 is smarter than we think. NextJS 13 provides constant option. we can set `force-dynamic` to create this page dynamically
+
+
+```tsx
+// build-4
+import axios from "axios";
+
+export const dynamic = "force-dynamic";
+
+const page = async ({}) => {
+  const { data } = await axios("https://jsonplaceholder.typicode.com/posts/1");
+
+  return <div>{JSON.stringify(data)}</div>;
+};
+
+export default page;
+```
+![build-4](https://github.com/deutschkihun/app-router-next13/assets/45092135/0c128a43-8e99-4824-a6d7-6a38c099e557)
+
+
