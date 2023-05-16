@@ -39,3 +39,22 @@ Till Next12 index.tsx is a entry file. From Next13 page.tsx is entry file
 ## layout.tsx
 
 Any subfolder should path through layout.tsx in root level. Also create layout inside of subfolder to set a sepcifc layout setting only for this subfolder.
+
+## Rendering for optimization 
+
+Please check out dashbard.tsx. You can find out different code base in there. 
+
+```tsx
+// build-1
+import { FC } from "react";
+
+interface pageProps {}
+
+const page: FC<pageProps> = ({}) => {
+   return <div>page</div>;
+ };
+
+export default page;
+```
+
+![build-1](https://github.com/deutschkihun/app-router-next13/assets/45092135/5f6b92b1-a8db-40db-a79b-c0dac1e4535e)
